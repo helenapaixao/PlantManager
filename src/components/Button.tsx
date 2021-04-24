@@ -3,7 +3,11 @@ import React from 'react';
 import {TouchableOpacity, Text, StyleSheet} from 'react-native'
 import colors from '../../styles/colors';
 
-export function Button() {
+interface ButtonProps {
+  title: string;
+}
+
+export function Button({title} : ButtonProps) {
   return (
     <>
 
@@ -13,7 +17,7 @@ export function Button() {
     <Text style={styles.buttonText}
 
     >
-      >
+      {title}
 </Text>
   </TouchableOpacity>
 

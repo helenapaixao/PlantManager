@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image,  StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet } from 'react-native'
 import colors from '../../styles/colors';
 import wateringImg from '../assets/watering.png'
 
@@ -21,8 +21,8 @@ export function Welcome() {
         Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
         sempre que precisar.
 </Text>
-<Button/>
-   
+      <Button title=">" />
+
     </View>
 
   )
@@ -47,10 +47,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     color: colors.heading
   },
- 
+
   image: {
     width: 293,
     height: 284
   },
- 
+
 })
