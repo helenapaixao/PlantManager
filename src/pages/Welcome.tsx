@@ -29,7 +29,7 @@ export function Welcome() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Gerencie {'\n'}
-      suas plantas    de{'\n'}
+      suas plantas de{'\n'}
 
       forma fácil</Text>
       <Image
