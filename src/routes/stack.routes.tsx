@@ -25,7 +25,7 @@ const AppRoutes: React.FC = () => (
     component={Welcome}
     />
       <stackRoutes.Screen
-    name="USer"
+    name="UserIdentification"
     component={UserIdentification}
     />
       <stackRoutes.Screen

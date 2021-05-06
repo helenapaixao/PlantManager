@@ -8,8 +8,8 @@ import {
 
 
 } from 'react-native'
- 
-import {Button} from '../components/Button'
+
+import { Button } from '../components/Button'
 import colors from '../../styles/colors';
 
 import fonts from '../../styles/fonts'
@@ -21,7 +21,7 @@ export function Confirmation() {
       <View style={styles.content}>
         <Text style={styles.emoji}>
 
-        😀
+          😀
         </Text>
         <Text style={styles.title}>
           Prontinho
@@ -30,10 +30,13 @@ export function Confirmation() {
         <Text style={styles.subtitle}>
           Agora vamos começar a cuidar das suas plantinhas
         </Text>
-        <Button/>
+        <Button
+          title="Começar"
+
+        />
       </View>
       <View style={styles.footer}>
-    
+
 
       </View>
 
@@ -44,17 +47,17 @@ export function Confirmation() {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
   },
   content: {
     flex: 1,
     justifyContent: 'center',
-    alignContent:'center',
+    alignContent: 'center',
     width: '100%',
     padding: 30,
-    
+
   },
 
   title: {
@@ -76,12 +79,12 @@ const styles = StyleSheet.create({
 
   emoji: {
     fontSize: 78,
-    textAlign:'center'
+    textAlign: 'center'
   },
 
   footer: {
     width: '100%',
-    
+
     paddingHorizontal: 50,
     marginTop: 20,
   }

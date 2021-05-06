@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   SafeAreaView,
@@ -9,6 +9,7 @@ import {
   Platform
 
 } from 'react-native';
+import { useNavigation } from '@react-navigation/core'
 
 import { Button } from '../components/Button'
 
@@ -20,21 +21,30 @@ export function UserIdentification() {
   const [isFilled, setIsFilled] = useState(false);
   const [name, setName] = useState<string>()
 
-    function handleInputBlur() {
-      setIsFocused(false)
-      setIsFilled(!!name);
+  const navigation = useNavigation()
 
-    }
+  function handleStart() {
 
-    function handleInputFocus() {
-      setIsFocused(true)
-    }
+    navigation.navigate('Confirmation')
 
-    function handleInputChange(value: string) {
-      setIsFilled(!!value);
-     setName(value)
+  }
 
-    }
+
+  function handleInputBlur() {
+    setIsFocused(false)
+    setIsFilled(!!name);
+
+  }
+
+  function handleInputFocus() {
+    setIsFocused(true)
+  }
+
+  function handleInputChange(value: string) {
+    setIsFilled(!!value);
+    setName(value)
+
+  }
 
 
 
@@ -47,8 +57,8 @@ export function UserIdentification() {
           <View style={styles.form}>
             <View style={styles.header}>
               <Text style={styles.emoji}>
-                { isFilled ?'😀' : '😊'}
-            </Text>
+                {isFilled ? '😀' : '😊'}
+              </Text>
               <Text style={styles.title}>
                 Como podemos {'\n'}
           chamar você?
@@ -57,7 +67,8 @@ export function UserIdentification() {
 
             <TextInput
               style={[styles.input,
-              (isFocused || isFilled)  && { borderColor : colors.green
+              (isFocused || isFilled) && {
+                borderColor: colors.green
               }]}
               placeholder="Digite o nome"
               onBlur={handleInputBlur}
@@ -65,7 +76,11 @@ export function UserIdentification() {
               onChangeText={handleInputChange}
             />
             <View style={styles.footer}>
-              <Button />
+              <Button
+                title="Confirmar"
+                onPress={handleStart}
+
+              />
             </View>
 
           </View>
