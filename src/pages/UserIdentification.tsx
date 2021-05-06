@@ -4,9 +4,12 @@ import {
   SafeAreaView,
   View,
   Text,
-   TextInput
+  TextInput
 
 } from 'react-native';
+
+import { Button } from '../components/Button'
+
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 
@@ -15,21 +18,21 @@ export function UserIdentification() {
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <View style={styles.form}>
-        <Text style={styles.emoji}>
+          <Text style={styles.emoji}>
             😀
             </Text>
           <Text style={styles.title}>
-          Como podemos {'\n'}
+            Como podemos {'\n'}
           chamar você?
           </Text>
-   
-        
-          <TextInput style={styles.input}/>
- 
-
-         
-
+          <TextInput style={styles.input} />
+          <View style={styles.footer}>
+          <Button />
+          </View>
+     
         </View>
+
+      
 
       </View>
     </SafeAreaView>
@@ -40,9 +43,9 @@ export default UserIdentification;
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     width: '100%',
-    alignItems:'center',
+    alignItems: 'center',
     justifyContent: 'space-around',
 
 
@@ -53,10 +56,11 @@ const styles = StyleSheet.create({
 
   },
   form: {
-    flex:1,
+    flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 54,
-    alignItems: 'center'
+    alignItems: 'center',
+    width: "100%"
 
   },
   emoji: {
@@ -65,14 +69,14 @@ const styles = StyleSheet.create({
 
   },
   input: {
-      borderBottomWidth: 1,
-      borderColor: colors.gray,
-      color: colors.heading,
-      width:'100%',
-      fontSize: 18,
-      marginTop: 50,
-      padding:10,
-      textAlign: 'center'
+    borderBottomWidth: 1,
+    borderColor: colors.gray,
+    color: colors.heading,
+    width: '100%',
+    fontSize: 18,
+    marginTop: 50,
+    padding: 10,
+    textAlign: 'center'
 
   },
 
@@ -82,7 +86,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: colors.heading,
     fontFamily: fonts.heading,
-    marginTop:20,
+    marginTop: 20,
+  },
+
+  footer: {
+    width: "100%",
+    marginTop: 40,
   }
 })
 
