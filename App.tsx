@@ -4,7 +4,7 @@ import React from 'react';
 //import { Welcome } from './src/pages/Welcome';
 import {UserIdentification} from './src/pages/UserIdentification'
 import AppLoading from 'expo-app-loading'
-import {Confirmation} from './src/pages/Confirmation'
+import Routes from './src/routes'
 
 import {
   useFonts,
@@ -25,7 +25,7 @@ export default function App() {
   )
   return (
     
-    <Confirmation/>
+    <Routes/>
    
   );
 }
