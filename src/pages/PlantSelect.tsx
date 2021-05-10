@@ -1,9 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList
+
+
+} from 'react-native';
 import colors from '../../styles/colors'
 import fonts from '../../styles/fonts';
+import { EnviromentButton } from '../components/EnviromentButton';
 import {Header} from '../components/Header'
 
 
@@ -24,6 +28,24 @@ const navigation = useNavigation();
       <Text style={styles.subTitle}>
         você quer colocar sua planta?
       </Text>
+
+      <View>
+        <FlatList
+          data={[1,2,3,4,5]}
+          renderItem={({item}) => (
+            <EnviromentButton 
+            title="Cozinha" 
+            active
+            />
+          )}
+          horizontal
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.enviromentList}
+
+        />
+      </View>
+
+  
       </View>
      
     </View>
@@ -54,6 +76,14 @@ const styles = StyleSheet.create({
     fontSize: 17,
     lineHeight: 20,
     color: colors.heading
+
+  },
+  enviromentList: {
+    height: 40,
+    justifyContent: 'center',
+    paddingBottom: 5,
+    marginLeft: 32,
+    marginVertical: 22,
 
   }
 })
