@@ -112,12 +112,7 @@ export function PlantSelect() {
 
   }, [])
 
-  useEffect(() => {
-
-
-    fetchPlants();
-
-  }, [])
+ 
 
   if (loading)
     return <Load />

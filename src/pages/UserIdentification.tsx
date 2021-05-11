@@ -19,6 +19,8 @@ import { Button } from '../components/Button'
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
 export function UserIdentification() {
   const [isFocused, setIsFocused] = useState(false)
   const [isFilled, setIsFilled] = useState(false);
@@ -26,10 +28,10 @@ export function UserIdentification() {
 
   const navigation = useNavigation()
 
-  function handleStart() {
-    if(!name) 
-    return Alert.alert('Me diz como chamar você 😕 ')
-
+  async function handleStart() {
+    if (!name)
+      return Alert.alert('Me diz como chamar você 😕 ')
+    await AsyncStorage.setItem('@plantmanager:user', name)
     navigation.navigate('Confirmation')
 
   }
