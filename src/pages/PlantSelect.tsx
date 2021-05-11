@@ -3,7 +3,7 @@ import { forModalPresentationIOS } from '@react-navigation/stack/lib/typescript/
 import React, { useEffect, useState } from 'react';
 
 import {
-  View, Text, StyleSheet, FlatList
+  View, Text, StyleSheet, FlatList, ActivityIndicator
 
 
 } from 'react-native';
@@ -166,7 +166,13 @@ export function PlantSelect() {
           numColumns={2}
           onEndReachedThreshold={0.1}
           onEndReached={({ distanceFromEnd }) =>
-            handleFetchMore(distanceFromEnd)}
+            handleFetchMore(distanceFromEnd)
+          }
+          ListFooterComponent={
+            loadingMore ?
+            <ActivityIndicator color={colors.green}/>
+            : <> </>
+          }
         />
 
       </View>
